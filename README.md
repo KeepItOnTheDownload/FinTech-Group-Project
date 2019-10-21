@@ -1,6 +1,5 @@
 # Table Of Contents
 
-- [CEO Compensation, Financial & Tech Stock Prices Analysis](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ceo-compensation--stock-prices-analysis)
 - [1. Intro](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#1-intro)
     + [Requirements:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
 - [2. Process, Cleaning & Renaming:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
@@ -16,7 +15,7 @@
 
 
 
-# CEO Compensation, Financial & Tech Stock Prices Analysis
+# CEO Compensation, Financial & Tech Stock Price Analysis
 ![Money 2](Resources/PNG/money2.jpg)
 
 # 1. Intro
@@ -35,6 +34,7 @@ We initally ran into some problems obtaining data from online APIs. Although we 
 - Shares owned by the CEO
 - Approval of the board over the timeframe
 
+---
 <details><summary>Requirements</summary>
 
 ###  Requirements: 
@@ -55,7 +55,7 @@ We initally ran into some problems obtaining data from online APIs. Although we 
 
 * Create a README.md in your repo with a write-up summarizing your major findings. This should include a heading for each question you asked of your data and under each heading a short description of what you found and any relevant plots.</details>
 
-# 2. Process, Cleaning & Renaming:
+# 2. Process, Cleaning & Renaming
 
 ## Process
 Inorder to gather the necessary data to perfome meaningful analysis and adhear to the requirement we used the CSV files listed below and created them into DataFrames. As we initally ran into some problems obtaining data from online APIs. Although we were able to access IEX Cloud for financial data, it limited us to the last 5 years. To solve this problem we gained access to a Bloomberg Terminal and were able to pull data going back 12 years to 2007. From this data source we were able to pull:
@@ -74,6 +74,7 @@ Using this new package, we were able to clean our data by removing all the rows 
 
 On top of checking the holdings of XLF and XLK for their performance over the timeframe, we were able to check the performance of each sector of the US economy
 
+---
 <details><summary>Relevant Libraries</summary>
 
 ### Libraries 
@@ -163,7 +164,7 @@ Black represents there is a value, while white means that the data is missing
     data2_fin.set_index(pd.to_datetime(data2_fin['Date'], infer_datetime_format=True), inplace=True)
     data2_fin.drop(columns=['Date'], inplace=True)
 ```
-#### Scaling by millions
+#### Scaling by millions:
 ```javascript
     data2_fin=data2_fin/1000000
 ```
@@ -175,7 +176,7 @@ Black represents there is a value, while white means that the data is missing
     data2_tech.set_index(pd.to_datetime(data2_tech['Date'], infer_datetime_format=True), inplace=True)
     data2_tech.drop(columns=['Date'], inplace=True)
 ```
-#### Scaling by million 
+#### Scaling by million: 
 ```javascript
     data2_tech=data2_tech/1000000
 ```
@@ -193,43 +194,43 @@ Black represents there is a value, while white means that the data is missing
     temp_csv = Path("Resources/tenure_tech.csv")
     data3_tech=pd.read_csv(temp_csv)data3_tech.set_index(pd.to_datetime(data3_tech['Date'],infer_datetime_format=True), inplace=True)
 ```
-#### Reading shares owned by ceo as % of shares outstanding for financial stocks
+#### Reading shares owned by ceo as % of shares outstanding for financial stocks:
 ```javascript
     temp_csv = Path("Resources/sharesceo_fin.csv")
     data4_fin=pd.read_csv(temp_csv)
     data4_fin.set_index(pd.to_datetime(data4_fin['Date'], infer_datetime_format=True), inplace=True)
     data4_fin.drop(columns=['Date'], inplace=True)
 ```
-#### Using Missingo to inspect the data and see how much missing data do we have.
+#### Using Missingo to inspect the data and see how much missing data do we have:
 We are only able to pull 4 years worth of data thus we need to analyze this data by year.
 ```javascript
     msno.matrix(data4_fin)
 ```
 ![Missingo FIn4](Resources/PNG/Missingo(Data4_Fin).png)
 
-#### Removing rows with all NaN values 
+#### Removing rows with all NaN values: 
 ```javascript
     data4_fin = data4_fin.dropna(how='all')
 ```
-#### Reading shares owned by ceo as % of shares outstanding for technology stocks
+#### Reading shares owned by ceo as % of shares outstanding for technology stocks:
 ```javascript
     temp_csv = Path("Resources/sharesceo_tech.csv")
     data4_tech=pd.read_csv(temp_csv)
     data4_tech.set_index(pd.to_datetime(data4_tech['Date'], infer_datetime_format=True), inplace=True)
     data4_tech.drop(columns=['Date'], inplace=True)
 ```
-#### Using Missingo to inspect the data and see how much missing data do we have.
+#### Using Missingo to inspect the data and see how much missing data do we have:
 ```javascript
     msno.matrix(data4_tech)
 ![Missingo Tech4](Resources/PNG/Massiogo(Data4_Tech).png)
 ```
 
-#### Removing rows with all NaN values
+#### Removing rows with all NaN values:
 ```javascript
     data4_tech = data4_tech.dropna(how='all')
 ```
 
-#### Using new package to inspect the data and see how much missing data do we have.
+#### Using new package to inspect the data and see how much missing data do we have:
 XLRE missing the majority of the data -- this classification for real state is a new convention
 ```javascript
     msno.matrix(ret_sector) 
@@ -237,7 +238,7 @@ XLRE missing the majority of the data -- this classification for real state is a
 ![Missingo RetSector](Resources/PNG/MissingoRetSector.png) </details>
 
 
-# 3. Insights:
+# 3. Insights
 ![Slide](Resources/PNG/Research.png)
 Using the two datasets (comp_fin.csv) & (comp_tech.csv) we created a boxplot to  evaluate the compensation in both the finance sector and the technology sector. While the technology sector has very little variance between compensation, there is a relatively high variance in compensation for the finance sector.
 
@@ -253,7 +254,7 @@ https://www.wsj.com/articles/aig-ceo-brian-duperreaults-pay-totaled-20-9-million
 We were able to analyze the tenures of the these stocks and determine if this had any effect on the stock. The immediate observation from looking at tenures of XLF is the length of Berkshire Hathway's CEO  Warren Buffet. This legendary investor is known for his buy and hold strategy and it seems his tenure at Berkshire Hathaway has been nothing but prosperus. It should also be noted that when looking at ownership of the the stock by CEO, Warren Buffet towers over other CEO holding way more shares of his own stock than any other CEO. This could be attributed to multiple factors, one of them being the tenure. Given the amount of time as CEO, Warren Buffet has had the most availability to stock options and acquiring stock. Combined with his personal style of "buy and hold", it makes sense that Warren Buffet holds so much Berkshire Hathaway stock. This will also correlate with CEO board approval, which is one of the highest.
 
 # 4. Plots & Conclusions
-## Sector ETFS cumuulative returns Plot:
+## Sector ETFS Cummulative Returns Plot:
 On top of checking the holdings of XLF and XLK for their performance over the timeframe, we were able to check the performance of each sector of the US economy.
 
 ![SectorETFS](Resources/PNG/SectorETFS&SP500.png)
@@ -268,7 +269,7 @@ We can see that for tech stocks the correlation is negative over time, the more 
 ![CEO Compensation](Resources/PNG/CEOCompensation.png)
 ![Results Compensation](Resources/PNG/ResultsCompensation.png)
 
-## Tenure Plot 
+## Tenure Plot:
 Upon evaluating the plots the team finds that correlation analysis between tenure and yearly return is forward looking. 
 
 We can see that for financial stocks the correlation is slightly positive over time, very small though, we need more data to validate.
@@ -292,7 +293,7 @@ Upon evaluating the plots the team finds that correlation analysis between appro
 ![Approval](Resources/PNG/Approval.png)
 ![Results Approval](Resources/PNG/ResultsApproval.png)
 
-## Combined Plot 
+## Combined Plot:
 Extract selecting year 2015 for tech stocks and visually see interactions Compensation, approval, tenure. We are calculating rank on each metric and we want to see the extreme values relationship given that the correlation are low on the 3 metrics.
 
 ![Results Combined](Resources/PNG/ResultsCombined.png)
