@@ -1,10 +1,10 @@
 # Table Of Contents
 
 - [1. Intro](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#1-intro)
-    + [Requirements:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
-- [2. Process, Cleaning & Renaming:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
+    + [Requirements](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
+- [2. Process, Cleaning & Renaming](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
   * [Process](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#process)
-- [3. Insights:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
+- [3. Insights](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
 - [4. Plots & Conclusions](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#4-plots--conclusions)
   * [Sector ETFS cumuulative returns Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
   * [Compensation Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#compensation-plot)
@@ -37,7 +37,7 @@ We initally ran into some problems obtaining data from online APIs. Although we 
 ---
 <details><summary>Requirements</summary>
 
-###  Requirements: 
+##  Requirements: 
 
 *  Use Pandas to clean and format your dataset(s).
 
@@ -54,7 +54,7 @@ We initally ran into some problems obtaining data from online APIs. Although we 
 * Optionally, use at least one API, if you can find an API with data pertinent to your primary research questions.
 
 * Create a README.md in your repo with a write-up summarizing your major findings. This should include a heading for each question you asked of your data and under each heading a short description of what you found and any relevant plots.</details>
-
+---
 # 2. Process, Cleaning & Renaming
 
 ## Process
@@ -70,9 +70,9 @@ After obtaining the data, the first step was cleaning the data. Loading in the c
 
 Using a new package called Missingno, we were able to visualize what data we were missing. This new package will read through our dataframe and let us know what data was NaN or unavailable, allowing us to see where our data was most reliable and where it was not.
 
-Using this new package, we were able to clean our data by removing all the rows with NaN values
+Using this new package, we were able to clean our data by removing all the rows with NaN values.
 
-On top of checking the holdings of XLF and XLK for their performance over the timeframe, we were able to check the performance of each sector of the US economy
+On top of checking the holdings of XLF and XLK for their performance over the timeframe, we were able to check the performance of each sector of the US economy.
 
 ---
 <details><summary>Relevant Libraries</summary>
@@ -118,126 +118,127 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
 <details><summary>Data Clean-up</summary>
 
 ### Clean-up Code:
-```javascript
 #### Reading approval rate of CEO for finanacial stocks:
-    temp_csv = Path("Resources/approval_fin.csv")
-    data1_fin=pd.read_csv(temp_csv)
-    data1_fin.set_index(pd.to_datetime(data1_fin['Date'], infer_datetime_format=True),inplace=True)
-    data1_fin.drop(columns=['Date'], inplace=True)} 
+```javascript
+temp_csv = Path("Resources/approval_fin.csv"data1_fin=pd.read_csv(temp_csv)
+data1_fin.set_index(pd.to_datetime(data1_fin['Date']infer_datetime_format=True),inplace=True)
+data1_fin.drop(columns=['Date'], inplace=True)} 
+    
 ```
 
 #### Using Missingno to inspect the data and see how much missing data do we have:
 
 Black represents there is a value, while white means that the data is missing 
 ```javascript
-    msno.matrix(data1_fin)
+msno.matrix(data1_fin)
 ```
 ![Missingo Fin](Resources/PNG/missingoFin.png)
 
 #### Removing rows with all NaN values: 
 ```javascript
-    data1_fin = data1_fin.dropna(how='all')
+data1_fin = data1_fin.dropna(how='all')
 ```
 #### Reading approval rate of CEO for technology stocks:
 ```javascript
-    temp_csv = Path("Resources/approval_tech.csv")
-    data1_tech=pd.read_csv(temp_csv)
-    data1_tech.set_index(pd.to_datetime(data1_tech['Date'], infer_datetime_format=True), inplace=True)
-    data1_tech.drop(columns=['Date'], inplace=True)
+temp_csv = Path("Resources/approval_tech.csv")
+data1_tech=pd.read_csv(temp_csv)
+data1_tech.set_index(pd.to_datetime(data1_tech['Date'], infer_datetime_format=True),inplace=True)
+data1_tech.drop(columns=['Date'], inplace=True)
 ```
 #### Using Missingno to inspect the data and see how much missing data do we have:
 ```javascript
-    msno.matrix(data1_tech)
+msno.matrix(data1_tech)
 ```
 ![Missingo Tech](Resources/PNG/MassingoTech.png)
 
 
 #### Removing rows with all NaN values:
 ```javascript
-    data1_tech = data1_tech.dropna(how='all')
+data1_tech = data1_tech.dropna(how='all')
 ```    
 
 #### Reading compensation rate of CEO for financial stocks:
 ```javascript
-    temp_csv = Path("Resources/comp_fin.csv")
-    data2_fin=pd.read_csv(temp_csv)
-    data2_fin.set_index(pd.to_datetime(data2_fin['Date'], infer_datetime_format=True), inplace=True)
-    data2_fin.drop(columns=['Date'], inplace=True)
+temp_csv = Path("Resources/comp_fin.csv")
+data2_fin=pd.read_csv(temp_csv)
+data2_fin.set_index(pd.to_datetime(data2_fin['Date'], infer_datetime_format=True), inplace=True)
+data2_fin.drop(columns=['Date'], inplace=True)
 ```
 #### Scaling by millions:
 ```javascript
-    data2_fin=data2_fin/1000000
+data2_fin=data2_fin/1000000
 ```
 
 #### Reading compensation rate of CEO for technology stocks:
 ```javascript
-    temp_csv = Path("Resources/comp_tech.csv")
-    data2_tech=pd.read_csv(temp_csv)
-    data2_tech.set_index(pd.to_datetime(data2_tech['Date'], infer_datetime_format=True), inplace=True)
-    data2_tech.drop(columns=['Date'], inplace=True)
+temp_csv = Path("Resources/comp_tech.csv")
+data2_tech=pd.read_csv(temp_csv)
+data2_tech.set_index(pd.to_datetime(data2_tech['Date'], infer_datetime_format=True),inplace=True)
+data2_tech.drop(columns=['Date'], inplace=True)
 ```
 #### Scaling by million: 
 ```javascript
-    data2_tech=data2_tech/1000000
+data2_tech=data2_tech/1000000
 ```
 
 
 #### Reading tenure of CEO for financials stocks - measure in years: 
 ```javascript
-    temp_csv = Path("Resources/tenure_fin.csv")
-    data3_fin=pd.read_csv(temp_csv)
-    data3_fin.set_index(pd.to_datetime(data3_fin['Date'], infer_datetime_format=True), inplace=True)
+temp_csv = Path("Resources/tenure_fin.csv")
+data3_fin=pd.read_csv(temp_csv)
+data3_fin.set_index(pd.to_datetime(data3_fin['Date'], infer_datetime_format=True), inplace=True)
 ```
 
 #### Reading tenure of CEO for technology stocks - measure in years: 
 ```javascript
-    temp_csv = Path("Resources/tenure_tech.csv")
-    data3_tech=pd.read_csv(temp_csv)data3_tech.set_index(pd.to_datetime(data3_tech['Date'],infer_datetime_format=True), inplace=True)
+temp_csv = Path("Resources/tenure_tech.csv")
+data3_tech=pd.read_csv(temp_csv)data3_tech.set_index(pd.to_datetime(data3_tech['Date'],infer_datetime_format=True), inplace=True)
 ```
 #### Reading shares owned by ceo as % of shares outstanding for financial stocks:
 ```javascript
-    temp_csv = Path("Resources/sharesceo_fin.csv")
-    data4_fin=pd.read_csv(temp_csv)
-    data4_fin.set_index(pd.to_datetime(data4_fin['Date'], infer_datetime_format=True), inplace=True)
-    data4_fin.drop(columns=['Date'], inplace=True)
+temp_csv = Path("Resources/sharesceo_fin.csv")
+data4_fin=pd.read_csv(temp_csv)
+data4_fin.set_index(pd.to_datetime(data4_fin['Date'], infer_datetime_format=True), inplace=True)
+data4_fin.drop(columns=['Date'], inplace=True)
 ```
 #### Using Missingo to inspect the data and see how much missing data do we have:
 We are only able to pull 4 years worth of data thus we need to analyze this data by year.
 ```javascript
-    msno.matrix(data4_fin)
+msno.matrix(data4_fin)
 ```
 ![Missingo FIn4](Resources/PNG/Missingo(Data4_Fin).png)
 
 #### Removing rows with all NaN values: 
 ```javascript
-    data4_fin = data4_fin.dropna(how='all')
+data4_fin = data4_fin.dropna(how='all')
 ```
 #### Reading shares owned by ceo as % of shares outstanding for technology stocks:
 ```javascript
-    temp_csv = Path("Resources/sharesceo_tech.csv")
-    data4_tech=pd.read_csv(temp_csv)
-    data4_tech.set_index(pd.to_datetime(data4_tech['Date'], infer_datetime_format=True), inplace=True)
-    data4_tech.drop(columns=['Date'], inplace=True)
+temp_csv = Path("Resources/sharesceo_tech.csv")
+data4_tech=pd.read_csv(temp_csv)
+data4_tech.set_index(pd.to_datetime(data4_tech['Date'], infer_datetime_format=True),inplace=True)
+data4_tech.drop(columns=['Date'], inplace=True)
 ```
 #### Using Missingo to inspect the data and see how much missing data do we have:
 ```javascript
-    msno.matrix(data4_tech)
-![Missingo Tech4](Resources/PNG/Massiogo(Data4_Tech).png)
+msno.matrix(data4_tech)
 ```
+![Missingo Tech4](Resources/PNG/Massiogo(Data4_Tech).png)
+
 
 #### Removing rows with all NaN values:
 ```javascript
-    data4_tech = data4_tech.dropna(how='all')
+data4_tech = data4_tech.dropna(how='all')
 ```
 
 #### Using new package to inspect the data and see how much missing data do we have:
 XLRE missing the majority of the data -- this classification for real state is a new convention
 ```javascript
-    msno.matrix(ret_sector) 
+msno.matrix(ret_sector) 
 ```
 ![Missingo RetSector](Resources/PNG/MissingoRetSector.png) </details>
 
-
+--- 
 # 3. Insights
 ![Slide](Resources/PNG/Research.png)
 Using the two datasets (comp_fin.csv) & (comp_tech.csv) we created a boxplot to  evaluate the compensation in both the finance sector and the technology sector. While the technology sector has very little variance between compensation, there is a relatively high variance in compensation for the finance sector.
@@ -252,6 +253,12 @@ Another outlier on the CEO compensation metric is the compensation for AIG CEO B
 https://www.wsj.com/articles/aig-ceo-brian-duperreaults-pay-totaled-20-9-million-in-2018-11554238358
 
 We were able to analyze the tenures of the these stocks and determine if this had any effect on the stock. The immediate observation from looking at tenures of XLF is the length of Berkshire Hathway's CEO  Warren Buffet. This legendary investor is known for his buy and hold strategy and it seems his tenure at Berkshire Hathaway has been nothing but prosperus. It should also be noted that when looking at ownership of the the stock by CEO, Warren Buffet towers over other CEO holding way more shares of his own stock than any other CEO. This could be attributed to multiple factors, one of them being the tenure. Given the amount of time as CEO, Warren Buffet has had the most availability to stock options and acquiring stock. Combined with his personal style of "buy and hold", it makes sense that Warren Buffet holds so much Berkshire Hathaway stock. This will also correlate with CEO board approval, which is one of the highest.
+
+After conducting our research we looked back at areas that may have been problematic in our dissection of the data. The first one that we realized is that we took a present day snapshot of the indices. This is problematic because this only shows the companies that managed to survive the Great Financial Crisis and thrive since. It does not highlight the companies that may have provided hefty compensation only to have their company go bankrupt or at least lose a major portion of market cap. 
+
+If we went back to 2007 and captured a snapshot of the companies that made up the indices, our data may have been less correlated. Another bias we may have had with our data is that the metrics used may have been skewed. CEO notoriously have complicated payment structures, some recieve compensation based on different metrics, and recieve it in multiple ways. It would take a more intesive study with more insight into the contracts to truly determine all the ways that CEO's are compensated and if we are measuring it correctly. 
+
+Also we are unsure if market cap or stock price are correct metrics to measure success with also. P/E ratios were considered but based on the data available we chose this metric. Further insight might lead us to use a different metric in the future.
 
 # 4. Plots & Conclusions
 ## Sector ETFS Cummulative Returns Plot:
