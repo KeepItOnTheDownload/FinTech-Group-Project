@@ -9,7 +9,7 @@
     + [Files:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#files)
     + [Data Clean-Up:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#clean-up-code)
       - [Reading Approval Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#reading-approval-rate-of-ceo-for-finanacial-stocks)
-      - [Missing Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have
+      - [Missing Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have)
       - [Removing rows with all NaN values:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#removing-rows-with-all-nan-values)
       - [Scaling by million](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#scaling-by-million)
 - [3. Insights:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
