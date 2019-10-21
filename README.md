@@ -1,3 +1,47 @@
+# Table Of Contents
+
+- [CEO Compensation & Stock Prices Analysis](#ceo-compensation---stock-prices-analysis)
+- [1. Intro](#1-intro)
+    + [Requirements:](#requirements-)
+- [2. Process, Cleaning & Renaming:](#2-process--cleaning---renaming-)
+  * [Process](#process)
+    + [Libraries](#libraries)
+    + [Files:](#files-)
+    + [Data Clean-Up:](#Clean-upCode-)
+      - [Reading approval rate of CEO for finanacial stocks:](#reading-approval-rate-of-ceo-for-finanacial-stocks-)
+      - [Using Missingno to inspect the data and see how much missing data do we have:](#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have-)
+      - [Removing rows with all NaN values:](#removing-rows-with-all-nan-values-)
+      - [Reading approval rate of CEO for technology stocks:](#reading-approval-rate-of-ceo-for-technology-stocks-)
+      - [Using Missingno to inspect the data and see how much missing data do we have:](#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have--1)
+      - [Removing rows with all NaN values](#removing-rows-with-all-nan-values)
+      - [Reading compensation rate of CEO for financial stocks](#reading-compensation-rate-of-ceo-for-financial-stocks)
+      - [Scaling by million](#scaling-by-million)
+      - [Reading compensation rate of CEO for technology stocks](#reading-compensation-rate-of-ceo-for-technology-stocks)
+      - [Scaling by million](#scaling-by-million-1)
+      - [Reading tenure of CEO for financials stocks - measure in years](#reading-tenure-of-ceo-for-financials-stocks---measure-in-years)
+      - [Reading tenure of CEO for technology stocks - measure in years](#reading-tenure-of-ceo-for-technology-stocks---measure-in-years)
+      - [Reading shares owned by ceo as % of shares outstanding for financial stocks](#reading-shares-owned-by-ceo-as---of-shares-outstanding-for-financial-stocks)
+      - [Using Missingo to inspect the data and see how much missing data do we have.](#using-missingo-to-inspect-the-data-and-see-how-much-missing-data-do-we-have)
+      - [Removing rows with all NaN values](#removing-rows-with-all-nan-values-1)
+      - [Reading shares owned by ceo as % of shares outstanding for technology stocks](#reading-shares-owned-by-ceo-as---of-shares-outstanding-for-technology-stocks)
+      - [Using new package to inspect the data and see how much missing data do we have.](#using-new-package-to-inspect-the-data-and-see-how-much-missing-data-do-we-have)
+      - [Removing rows with all NaN values](#removing-rows-with-all-nan-values-2)
+      - [Using new package to inspect the data and see how much missing data do we have.](#using-new-package-to-inspect-the-data-and-see-how-much-missing-data-do-we-have-1)
+- [3. Insights:](#3-insights-)
+- [4. Plots & Conclusions](#4-plots---conclusions)
+  * [Sector ETFS cumuulative returns Plot:](#sector-etfs-cumuulative-returns-plot-)
+  * [Compensation Plot:](#compensation-plot-)
+  * [Tenure Plot](#tenure-plot)
+  * [Ownershio Plot:](#ownershio-plot-)
+  * [Approval Plot:](#approval-plot-)
+  * [Combined Plot](#combined-plot)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+
+
+
 # CEO Compensation & Stock Prices Analysis
 ![Money 2](Resources/PNG/money2.jpg)
 
@@ -94,6 +138,7 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
 </details>
 <details><summary>Data Clean-up</summary>
 
+### Clean-up Code
 #### Reading approval rate of CEO for finanacial stocks:
     temp_csv = Path("Resources/approval_fin.csv")
     data1_fin=pd.read_csv(temp_csv)
