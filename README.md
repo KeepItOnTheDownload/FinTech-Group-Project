@@ -1,44 +1,25 @@
 # Table Of Contents
 
-- [CEO Compensation & Stock Prices Analysis](#ceo-compensation---stock-prices-analysis)
-- [1. Intro](#1-intro)
-    + [Requirements:](#requirements-)
-- [2. Process, Cleaning & Renaming:](#2-process--cleaning---renaming-)
-  * [Process](#process)
-    + [Libraries](#libraries)
-    + [Files:](#files-)
-    + [Data Clean-Up:](#Clean-upCode-)
-      - [Reading approval rate of CEO for finanacial stocks:](#reading-approval-rate-of-ceo-for-finanacial-stocks-)
-      - [Using Missingno to inspect the data and see how much missing data do we have:](#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have-)
-      - [Removing rows with all NaN values:](#removing-rows-with-all-nan-values-)
-      - [Reading approval rate of CEO for technology stocks:](#reading-approval-rate-of-ceo-for-technology-stocks-)
-      - [Using Missingno to inspect the data and see how much missing data do we have:](#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have--1)
-      - [Removing rows with all NaN values](#removing-rows-with-all-nan-values)
-      - [Reading compensation rate of CEO for financial stocks](#reading-compensation-rate-of-ceo-for-financial-stocks)
-      - [Scaling by million](#scaling-by-million)
-      - [Reading compensation rate of CEO for technology stocks](#reading-compensation-rate-of-ceo-for-technology-stocks)
-      - [Scaling by million](#scaling-by-million-1)
-      - [Reading tenure of CEO for financials stocks - measure in years](#reading-tenure-of-ceo-for-financials-stocks---measure-in-years)
-      - [Reading tenure of CEO for technology stocks - measure in years](#reading-tenure-of-ceo-for-technology-stocks---measure-in-years)
-      - [Reading shares owned by ceo as % of shares outstanding for financial stocks](#reading-shares-owned-by-ceo-as---of-shares-outstanding-for-financial-stocks)
-      - [Using Missingo to inspect the data and see how much missing data do we have.](#using-missingo-to-inspect-the-data-and-see-how-much-missing-data-do-we-have)
-      - [Removing rows with all NaN values](#removing-rows-with-all-nan-values-1)
-      - [Reading shares owned by ceo as % of shares outstanding for technology stocks](#reading-shares-owned-by-ceo-as---of-shares-outstanding-for-technology-stocks)
-      - [Using new package to inspect the data and see how much missing data do we have.](#using-new-package-to-inspect-the-data-and-see-how-much-missing-data-do-we-have)
-      - [Removing rows with all NaN values](#removing-rows-with-all-nan-values-2)
-      - [Using new package to inspect the data and see how much missing data do we have.](#using-new-package-to-inspect-the-data-and-see-how-much-missing-data-do-we-have-1)
-- [3. Insights:](#3-insights-)
-- [4. Plots & Conclusions](#4-plots---conclusions)
-  * [Sector ETFS cumuulative returns Plot:](#sector-etfs-cumuulative-returns-plot-)
-  * [Compensation Plot:](#compensation-plot-)
-  * [Tenure Plot](#tenure-plot)
-  * [Ownershio Plot:](#ownershio-plot-)
-  * [Approval Plot:](#approval-plot-)
-  * [Combined Plot](#combined-plot)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
+- [CEO Compensation & Stock Prices Analysis](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ceo-compensation--stock-prices-analysis)
+- [1. Intro](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#1-intro)
+    + [Requirements:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
+- [2. Process, Cleaning & Renaming:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
+  * [Process](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#process)
+    + [Libraries](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#libraries)
+    + [Files:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#files)
+    + [Data Clean-Up:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#clean-up-code)
+      - [Reading Approval Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#reading-approval-rate-of-ceo-for-finanacial-stocks)
+      - [Missing Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have
+      - [Removing rows with all NaN values:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#removing-rows-with-all-nan-values)
+      - [Scaling by million](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#scaling-by-million)
+- [3. Insights:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
+- [4. Plots & Conclusions](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#4-plots--conclusions)
+  * [Sector ETFS cumuulative returns Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
+  * [Compensation Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#compensation-plot)
+  * [Tenure Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#tenure-plot)
+  * [Ownership Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ownership-plot)
+  * [Approval Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
+  * [Combined Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#combined-plot)
 
 
 
@@ -277,7 +258,7 @@ We can see that for tech stocks the correlation is slightly positive over time. 
 ![CEO Tenure](Resources/PNG/CEOTenureYears.png)
 ![ResultsTenure](Resources/PNG/ResultsTenure.png)
 
-## Ownershio Plot:
+## Ownership Plot:
 We created scatter plots for shares owned by ceo as % of shares outstanding for financial stocks, technology stocks and yearly return.
 
 The hypothesis we are trying to solve is that we think that when there is more at stake for the CEO financialy the more he/she be concern on managing well the company. it is midly confirm with the data. There is very little dispersion on the metric as most CEOs own similar percentages of shared for the majority of the stocks.
