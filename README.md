@@ -12,8 +12,8 @@
   * [Approval Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
   * [Combined Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#combined-plot)
 - [Jupyter Notebooks](Notebooks)
-    * [Dashboard](Notebooks/dashboard2_project.ipynb)
-    * [Code](Notebooks/JupyterLabCode.ipynb)
+    * [Dashboard](dashboard2_project.ipynb)
+    * [Code](JupyterLabCode.ipynb)
 
 ---
 
