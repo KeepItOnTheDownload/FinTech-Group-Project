@@ -1,16 +1,16 @@
 # Table Of Contents
 
 - [1. Intro](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#1-intro)
-    + [Requirements:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
-- [2. Process, Cleaning & Renaming:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
+    + [Requirements](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
+- [2. Process, Cleaning & Renaming](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
   * [Process](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#process)
-- [3. Insights:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
+- [3. Insights](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
 - [4. Plots & Conclusions](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#4-plots--conclusions)
-  * [Sector ETFS cumuulative returns Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
-  * [Compensation Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#compensation-plot)
+  * [Sector ETFS cumuulative returns Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
+  * [Compensation Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#compensation-plot)
   * [Tenure Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#tenure-plot)
-  * [Ownership Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ownership-plot)
-  * [Approval Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
+  * [Ownership Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ownership-plot)
+  * [Approval Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
   * [Combined Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#combined-plot)
 
 
