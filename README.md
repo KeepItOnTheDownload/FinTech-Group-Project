@@ -1,9 +1,8 @@
-# Table Of Contents
+#  CEO Compensation, Financial & Tech Stock Price Analysis
 
 - [1. Intro](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#1-intro)
     + [Requirements](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
 - [2. Process, Cleaning & Renaming](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
-  * [Process](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#process)
 - [3. Insights](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
 - [4. Plots & Conclusions](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#4-plots--conclusions)
   * [Sector ETFS cumuulative returns Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
@@ -12,10 +11,13 @@
   * [Ownership Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ownership-plot)
   * [Approval Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
   * [Combined Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#combined-plot)
+- [Jupyter Notebooks](Notebooks)
+    * [Dashboard](Notebooks/dashboard2_project.ipynb)
+    * [Code](Notebooks/JupyterLabCode.ipynb)
+
+---
 
 
-
-# CEO Compensation, Financial & Tech Stock Price Analysis
 ![Money 2](Resources/PNG/money2.jpg)
 
 # 1. Intro
@@ -35,7 +37,7 @@ We initally ran into some problems obtaining data from online APIs. Although we 
 - Approval of the board over the timeframe
 
 ---
-<details><summary>Requirements</summary>
+<details open><summary>Requirements</summary>
 
 ##  Requirements: 
 
