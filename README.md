@@ -1,17 +1,10 @@
 # Table Of Contents
 
-- [CEO Compensation & Stock Prices Analysis](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ceo-compensation--stock-prices-analysis)
+- [CEO Compensation, Financial & Tech Stock Prices Analysis](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ceo-compensation--stock-prices-analysis)
 - [1. Intro](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#1-intro)
     + [Requirements:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#requirements)
 - [2. Process, Cleaning & Renaming:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#2-process-cleaning--renaming)
   * [Process](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#process)
-    + [Libraries](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#libraries)
-    + [Files:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#files)
-    + [Data Clean-Up:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#clean-up-code)
-      - [Reading Approval Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#reading-approval-rate-of-ceo-for-finanacial-stocks)
-      - [Missing Data:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#using-missingno-to-inspect-the-data-and-see-how-much-missing-data-do-we-have)
-      - [Removing rows with all NaN values:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#removing-rows-with-all-nan-values)
-      - [Scaling by million](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#scaling-by-million)
 - [3. Insights:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
 - [4. Plots & Conclusions](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#4-plots--conclusions)
   * [Sector ETFS cumuulative returns Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
@@ -23,7 +16,7 @@
 
 
 
-# CEO Compensation & Stock Prices Analysis
+# CEO Compensation, Financial & Tech Stock Prices Analysis
 ![Money 2](Resources/PNG/money2.jpg)
 
 # 1. Intro
@@ -84,6 +77,7 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
 <details><summary>Relevant Libraries</summary>
 
 ### Libraries 
+```javascript
     import pandas as pd
     import numpy as np
     import datetime as dt
@@ -98,11 +92,13 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
     from panel import widgets
     import matplotlib
     import missingno as msno
-    get_ipython().run_line_magic('matplotlib', 'inline') 
+    get_ipython().run_line_magic('matplotlib', 'inline')
+```
 </details>
 <details><summary>CSV Files</summary>
 
 ### Files: 
+```javascript
     approval_fin.csv
     approval_tech.csv
     comp_fin.csv
@@ -116,104 +112,128 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
     sharesceo_tech.csv
     tenure_fin.csv
     tenure_tech.csv
+```
 </details>
 <details><summary>Data Clean-up</summary>
 
-### Clean-up Code
+### Clean-up Code:
+```javascript
 #### Reading approval rate of CEO for finanacial stocks:
     temp_csv = Path("Resources/approval_fin.csv")
     data1_fin=pd.read_csv(temp_csv)
     data1_fin.set_index(pd.to_datetime(data1_fin['Date'], infer_datetime_format=True),inplace=True)
     data1_fin.drop(columns=['Date'], inplace=True)} 
-
+```
 
 #### Using Missingno to inspect the data and see how much missing data do we have:
 
 Black represents there is a value, while white means that the data is missing 
-
+```javascript
     msno.matrix(data1_fin)
+```
 ![Missingo Fin](Resources/PNG/missingoFin.png)
 
 #### Removing rows with all NaN values: 
+```javascript
     data1_fin = data1_fin.dropna(how='all')
-
+```
 #### Reading approval rate of CEO for technology stocks:
+```javascript
     temp_csv = Path("Resources/approval_tech.csv")
     data1_tech=pd.read_csv(temp_csv)
     data1_tech.set_index(pd.to_datetime(data1_tech['Date'], infer_datetime_format=True), inplace=True)
     data1_tech.drop(columns=['Date'], inplace=True)
-
+```
 #### Using Missingno to inspect the data and see how much missing data do we have:
+```javascript
     msno.matrix(data1_tech)
+```
 ![Missingo Tech](Resources/PNG/MassingoTech.png)
 
 
-#### Removing rows with all NaN values 
+#### Removing rows with all NaN values:
+```javascript
     data1_tech = data1_tech.dropna(how='all')
-    
+```    
 
-#### Reading compensation rate of CEO for financial stocks
+#### Reading compensation rate of CEO for financial stocks:
+```javascript
     temp_csv = Path("Resources/comp_fin.csv")
     data2_fin=pd.read_csv(temp_csv)
     data2_fin.set_index(pd.to_datetime(data2_fin['Date'], infer_datetime_format=True), inplace=True)
     data2_fin.drop(columns=['Date'], inplace=True)
-
-#### Scaling by million 
+```
+#### Scaling by millions
+```javascript
     data2_fin=data2_fin/1000000
+```
 
-
-#### Reading compensation rate of CEO for technology stocks
+#### Reading compensation rate of CEO for technology stocks:
+```javascript
     temp_csv = Path("Resources/comp_tech.csv")
     data2_tech=pd.read_csv(temp_csv)
     data2_tech.set_index(pd.to_datetime(data2_tech['Date'], infer_datetime_format=True), inplace=True)
     data2_tech.drop(columns=['Date'], inplace=True)
+```
 #### Scaling by million 
+```javascript
     data2_tech=data2_tech/1000000
+```
 
 
-#### Reading tenure of CEO for financials stocks - measure in years 
+#### Reading tenure of CEO for financials stocks - measure in years: 
+```javascript
     temp_csv = Path("Resources/tenure_fin.csv")
     data3_fin=pd.read_csv(temp_csv)
     data3_fin.set_index(pd.to_datetime(data3_fin['Date'], infer_datetime_format=True), inplace=True)
+```
 
-#### Reading tenure of CEO for technology stocks - measure in years 
+#### Reading tenure of CEO for technology stocks - measure in years: 
+```javascript
     temp_csv = Path("Resources/tenure_tech.csv")
-    data3_tech=pd.read_csv(temp_csv)
-    data3_tech.set_index(pd.to_datetime(data3_tech['Date'], infer_datetime_format=True), inplace=True)
-    data3_tech.drop(columns=['Date'], inplace=True)
-
+    data3_tech=pd.read_csv(temp_csv)data3_tech.set_index(pd.to_datetime(data3_tech['Date'],infer_datetime_format=True), inplace=True)
+```
 #### Reading shares owned by ceo as % of shares outstanding for financial stocks
+```javascript
     temp_csv = Path("Resources/sharesceo_fin.csv")
     data4_fin=pd.read_csv(temp_csv)
     data4_fin.set_index(pd.to_datetime(data4_fin['Date'], infer_datetime_format=True), inplace=True)
     data4_fin.drop(columns=['Date'], inplace=True)
-
+```
 #### Using Missingo to inspect the data and see how much missing data do we have.
-Only 4 years worth of data .. we need to analyze this data by year 
+We are only able to pull 4 years worth of data thus we need to analyze this data by year.
+```javascript
     msno.matrix(data4_fin)
+```
 ![Missingo FIn4](Resources/PNG/Missingo(Data4_Fin).png)
 
 #### Removing rows with all NaN values 
+```javascript
     data4_fin = data4_fin.dropna(how='all')
-
+```
 #### Reading shares owned by ceo as % of shares outstanding for technology stocks
+```javascript
     temp_csv = Path("Resources/sharesceo_tech.csv")
     data4_tech=pd.read_csv(temp_csv)
     data4_tech.set_index(pd.to_datetime(data4_tech['Date'], infer_datetime_format=True), inplace=True)
     data4_tech.drop(columns=['Date'], inplace=True)
-
-#### Using new package to inspect the data and see how much missing data do we have.
-
+```
+#### Using Missingo to inspect the data and see how much missing data do we have.
+```javascript
     msno.matrix(data4_tech)
 ![Missingo Tech4](Resources/PNG/Massiogo(Data4_Tech).png)
+```
 
 #### Removing rows with all NaN values
+```javascript
     data4_tech = data4_tech.dropna(how='all')
+```
 
 #### Using new package to inspect the data and see how much missing data do we have.
 XLRE missing the majority of the data -- this classification for real state is a new convention
-
+```javascript
     msno.matrix(ret_sector) 
+```
 ![Missingo RetSector](Resources/PNG/MissingoRetSector.png) </details>
 
 
