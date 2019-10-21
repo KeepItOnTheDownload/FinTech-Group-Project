@@ -300,7 +300,7 @@ The hypothesis we are trying to solve is that we think that when there is more a
 ## Approval Plot:
 Upon evaluating the plots the team finds that correlation analysis between approval and yearly return is forward looking. The horizontal line is the mean value over the period analyzed.We can see that for financial stocks it does not appear that there is a relationship between approval and future performance. A Correlation 0 over time.
 ![Approval](Resources/PNG/Approval.png)
-![Results Approval](Resources/PNG/CorrelationApproval.png)
+![Results Approval](Resources/PNG/ResultsApproval.png)
 
 ## Combined Plot:
 Extract selecting year 2015 for tech stocks and visually see interactions Compensation, approval, tenure. We are calculating rank on each metric and we want to see the extreme values relationship given that the correlation are low on the 3 metrics.
