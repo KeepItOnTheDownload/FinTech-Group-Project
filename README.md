@@ -27,35 +27,33 @@ In the vast landscape of the US equity market there were many sectors we could h
 
 From the XLK etf we were able to determine the 68 biggest technology companies in the U.S. market. These companies were led by names like Microsoft, Apple, Adobe and Intel. Along with this information we were able to find data on CEO compensation going back to 2007. The benefit of choosing between these two sectors is that since 2007, Technology has been the leader in the recovery of the economy since the Great Financial Crisis. Meanwhile Financials has been a laggard, with multiple big banks coming under scrutiny for recieving bailouts from the U.S. taxpayers and CEO compensation becoming a big talking point. Should these banks that "failed" be rewarding their CEOs with gigantic salaries? Is there a correlation between these large salaries and the companies doing better? We try to answer these questions in the report.
 
-![Sector](C:Users\boitz\CU-NYC-FIN-PT-08-2019-U-C\Project1\Pictures\sector_etfs.png)
-  
 We initally ran into some problems obtaining data from online APIs. Although we were able to access IEX Cloud for financial data, it limited us to the last 5 years. To solve this problem we gained access to a Bloomberg Terminal and were able to pull data going back 12 years to 2007. From this data source we were able to pull:
  - Stock prices of all the stocks in XLF and XLK
-- The market cap of the stock
 - CEO compensation dating back to 2007
-- Shares owned by the CEO
-- Approval of the board over the timeframe
+- Percentage of shares outsanding held by the CEO
+- CEO Tenure in years
+- CEO approval by board over a time frame 
 
 ---
 <details open><summary>Requirements</summary>
 
 ##  Requirements: 
 
-*  Use Pandas to clean and format your dataset(s).
+- [x]  Use Pandas to clean and format your dataset(s).
 
-* Create a Jupyter Notebook describing the **data exploration and cleanup** process.
+- [x] Create a Jupyter Notebook describing the **data exploration and cleanup** process.
 
-* Create a Jupyter Notebook illustrating the **final data analysis**.
+- [x] Create a Jupyter Notebook illustrating the **final data analysis**.
 
-* Use PyViz, Panel, Plotly Express, and Hvplot to create six to eight visualizations of your data (ideally, at least two per question you ask of your data), and then aggregate these visualizations into a dashboard.
+- [x] Use PyViz, Panel, Plotly Express, and Hvplot to create six to eight visualizations of your data (ideally, at least two per question you ask of your data), and then aggregate these visualizations into a dashboard.
 
-* Save PNG images of your visualizations to distribute to the class and instructional team and for inclusion in your presentation and your repo's README.md file.
+- [x] Save PNG images of your visualizations to distribute to the class and instructional team and for inclusion in your presentation and your repo's README.md file.
 
-* Use one new Python library that hasn't been covered in class.
+- [x] Use one new Python library that hasn't been covered in class.
 
-* Optionally, use at least one API, if you can find an API with data pertinent to your primary research questions.
+- [x] Optionally, use at least one API, if you can find an API with data pertinent to your primary research questions.
 
-* Create a README.md in your repo with a write-up summarizing your major findings. This should include a heading for each question you asked of your data and under each heading a short description of what you found and any relevant plots.</details>
+- [x] Create a README.md in your repo with a write-up summarizing your major findings. This should include a heading for each question you asked of your data and under each heading a short description of what you found and any relevant plots.</details>
 ---
 # 2. Process, Cleaning & Renaming
 
@@ -242,8 +240,8 @@ msno.matrix(ret_sector)
 
 --- 
 # 3. Insights
-![Slide](Resources/PNG/Research.png)
-Using the two datasets (comp_fin.csv) & (comp_tech.csv) we created a boxplot to  evaluate the compensation in both the finance sector and the technology sector. While the technology sector has very little variance between compensation, there is a relatively high variance in compensation for the finance sector.
+![Slide](Resources/PNG/Slide.png)
+Using the two datasets [Financial Data](Resources/comp_fin.csv) & [Tech Data](Resources/comp_tech.csv) we created a boxplot to  evaluate the compensation in both the finance sector and the technology sector. While the technology sector has very little variance between compensation, there is a relatively high variance in compensation for the finance sector.
 
 We attributed this to the data going back as far as 2007 and covering the Great Financial Crisis. During this time, compensation for CEOs of the big banks came under scrutiny. In 2009 the compensation for the CEOs of JP Morgan, Citi, Goldman Sachs and Morgan Stanley were considerably lower. We also found that these same companies had many outliers and the compensation for the CEOs was well above the mean. Our group attributed this to the recovery of the Financials industry and stabilization in the markets and one of the longest bull runs in the US Equity market history.
 
