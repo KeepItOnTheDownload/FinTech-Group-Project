@@ -6,11 +6,11 @@
   * [Process](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#process)
 - [3. Insights](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#3-insights)
 - [4. Plots & Conclusions](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#4-plots--conclusions)
-  * [Sector ETFS cumuulative returns Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
-  * [Compensation Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#compensation-plot)
+  * [Sector ETFS cumuulative returns Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#sector-etfs-cumuulative-returns-plot)
+  * [Compensation Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#compensation-plot)
   * [Tenure Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#tenure-plot)
-  * [Ownership Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ownership-plot)
-  * [Approval Plot:](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
+  * [Ownership Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#ownership-plot)
+  * [Approval Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#approval-plot)
   * [Combined Plot](https://github.com/KeepItOnTheDownload/FinTech-Group-Project#combined-plot)
 
 
