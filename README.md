@@ -25,7 +25,7 @@ In this project we will evaluate CEO compensation, tenure, acceptance rate by bo
    
 In the vast landscape of the US equity market there were many sectors we could have focused on but for the purpose of this class we focused on finance and technology. We were able to look up the holdings of two of the biggest ETFs that ecapsulate these two sectors. XLF is a finance ETF that has holdings of 68 of the largest finance stocks in the U.S. economy. From this sector we were able to analyze the stock prices of banks like JP Morgan, Bank of America & Wells Fargo among others.
 
-From the XLK etf we were able to determine the 68 biggest technology companies in the U.S. market. These companies were led by names like Microsoft, Apple, Adobe and Intel. Along with this information we were able to find data on CEO compensation going back to 2007. The benefit of choosing between these two sectors is that since 2007, Technology has been the leader in the recovery of the economy since the Great Financial Crisis. Meanwhile Financials has been a laggard, with multiple big banks coming under scrutiny for recieving bailouts from the U.S. taxpayers and CEO compensation becoming a big talking point. Should these banks that "failed" be rewarding their CEOs with gigantic salaries? Is there a correlation between these large salaries and the companies doing better? We try to answer these questions in the report.
+From the XLK ETF we were able to determine the 68 biggest technology companies in the U.S. market. These companies were led by names like Microsoft, Apple, Adobe and Intel. Along with this information we were able to find data on CEO compensation going back to 2007. The benefit of choosing between these two sectors is that since 2007, Technology has been the leader in the recovery of the economy since the Great Financial Crisis. Meanwhile Financials has been a laggard, with multiple big banks coming under scrutiny for recieving bailouts from the U.S. taxpayers and CEO compensation becoming a big talking point. Should these banks that "failed" be rewarding their CEOs with gigantic salaries? Is there a correlation between these large salaries and the companies doing better? We try to answer these questions in the report.
 
 We initally ran into some problems obtaining data from online APIs. Although we were able to access IEX Cloud for financial data, it limited us to the last 5 years. To solve this problem we gained access to a Bloomberg Terminal and were able to pull data going back 12 years to 2007. From this data source we were able to pull:
  - Stock prices of all the stocks in XLF and XLK
@@ -79,40 +79,40 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
 
 ### Libraries 
 ```javascript
-    import pandas as pd
-    import numpy as np
-    import datetime as dt
-    from pathlib import Path
-    import os
-    import matplotlib.pyplot as plt
-    import hvplot.pandas
-    import plotly.express as px
-    import matplotlib
-    import panel as pn
-    from panel.interact import interact
-    from panel import widgets
-    import matplotlib
-    import missingno as msno
-    get_ipython().run_line_magic('matplotlib','inline')
+import pandas as pd
+import numpy as np
+import datetime as dt
+from pathlib import Path
+import os
+import matplotlib.pyplot as plt
+import hvplot.pandas
+import plotly.express as px
+import matplotlib
+import panel as pn
+from panel.interact import interact
+from panel import widgets
+import matplotlib
+import missingno as msno
+get_ipython().run_line_magic('matplotlib','inline')
 ```
 </details>
 <details><summary>CSV Files</summary>
 
 ### Files: 
 ```javascript
-    approval_fin.csv
-    approval_tech.csv
-    comp_fin.csv
-    comp_tech.csv
-    ktcap_fin.csv
-    mktcap_tech.csv
-    price_fin.csv
-    price_tech.csv
-    sector_prices.csv
-    sharesceo_fin.csv
-    sharesceo_tech.csv
-    tenure_fin.csv
-    tenure_tech.csv
+approval_fin.csv
+approval_tech.csv
+comp_fin.csv
+comp_tech.csv
+mktcap_fin.csv
+mktcap_tech.csv
+price_fin.csv
+price_tech.csv
+sector_prices.csv
+sharesceo_fin.csv
+sharesceo_tech.csv
+tenure_fin.csv
+tenure_tech.csv
 ```
 </details>
 <details><summary>Data Clean-up</summary>
@@ -269,7 +269,7 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
 ## Compensation Plot:
 Given that the distribution is tighter for tech we should expect finantial metrics to have more predictability. Upon evaluating the plots the team finds that the correlation analysis between compensation and yearly return is forward looking. 
 
-Thorizontal line is the mean value over the period analyzed. We can see that for financial stocks the correlation is almost 0 over time,it fluctuates some years positive, others negative.
+Horizontal line is the mean value over the period analyzed. We can see that for financial stocks the correlation is almost 0 over time,it fluctuates some years positive, others negative.
 
 We can see that for tech stocks the correlation is negative over time, the more compensation the CEO gets the worst the stock performs in later years. Correlation is subtle .. not that high though. overall CEO comp is negatively correlated with future performance.
 
