@@ -78,7 +78,7 @@ On top of checking the holdings of XLF and XLK for their performance over the ti
 <details><summary>Relevant Libraries</summary>
 
 ### Libraries 
-```javascript
+```python
 import pandas as pd
 import numpy as np
 import datetime as dt
@@ -99,7 +99,7 @@ get_ipython().run_line_magic('matplotlib','inline')
 <details><summary>CSV Files</summary>
 
 ### Files: 
-```javascript
+```python
 approval_fin.csv
 approval_tech.csv
 comp_fin.csv
@@ -119,7 +119,7 @@ tenure_tech.csv
 
 ### Clean-up Code:
 #### Reading approval rate of CEO for finanacial stocks:
-```javascript
+```python
 temp_csv = Path("Resources/approval_fin.csv"data1_fin=pd.read_csv(temp_csv)
 data1_fin.set_index(pd.to_datetime(data1_fin['Date']infer_datetime_format=True),inplace=True)
 data1_fin.drop(columns=['Date'], inplace=True)} 
@@ -129,73 +129,73 @@ data1_fin.drop(columns=['Date'], inplace=True)}
 #### Using Missingno to inspect the data and see how much missing data do we have:
 
 Black represents there is a value, while white means that the data is missing 
-```javascript
+```python
 msno.matrix(data1_fin)
 ```
 ![Missingo Fin](Resources/PNG/missingoFin.png)
 
 #### Removing rows with all NaN values: 
-```javascript
+```python
 data1_fin = data1_fin.dropna(how='all')
 ```
 #### Reading approval rate of CEO for technology stocks:
-```javascript
+```python
 temp_csv = Path("Resources/approval_tech.csv")
 data1_tech=pd.read_csv(temp_csv)
 data1_tech.set_index(pd.to_datetime(data1_tech['Date'], infer_datetime_format=True),inplace=True)
 data1_tech.drop(columns=['Date'], inplace=True)
 ```
 #### Using Missingno to inspect the data and see how much missing data do we have:
-```javascript
+```python
 msno.matrix(data1_tech)
 ```
 ![Missingo Tech](Resources/PNG/MassingoTech.png)
 
 
 #### Removing rows with all NaN values:
-```javascript
+```python
 data1_tech = data1_tech.dropna(how='all')
 ```    
 
 #### Reading compensation rate of CEO for financial stocks:
-```javascript
+```python
 temp_csv = Path("Resources/comp_fin.csv")
 data2_fin=pd.read_csv(temp_csv)
 data2_fin.set_index(pd.to_datetime(data2_fin['Date'], infer_datetime_format=True), inplace=True)
 data2_fin.drop(columns=['Date'], inplace=True)
 ```
 #### Scaling by millions:
-```javascript
+```python
 data2_fin=data2_fin/1000000
 ```
 
 #### Reading compensation rate of CEO for technology stocks:
-```javascript
+```python
 temp_csv = Path("Resources/comp_tech.csv")
 data2_tech=pd.read_csv(temp_csv)
 data2_tech.set_index(pd.to_datetime(data2_tech['Date'], infer_datetime_format=True),inplace=True)
 data2_tech.drop(columns=['Date'], inplace=True)
 ```
 #### Scaling by million: 
-```javascript
+```python
 data2_tech=data2_tech/1000000
 ```
 
 
 #### Reading tenure of CEO for financials stocks - measure in years: 
-```javascript
+```python
 temp_csv = Path("Resources/tenure_fin.csv")
 data3_fin=pd.read_csv(temp_csv)
 data3_fin.set_index(pd.to_datetime(data3_fin['Date'], infer_datetime_format=True), inplace=True)
 ```
 
 #### Reading tenure of CEO for technology stocks - measure in years: 
-```javascript
+```python
 temp_csv = Path("Resources/tenure_tech.csv")
 data3_tech=pd.read_csv(temp_csv)data3_tech.set_index(pd.to_datetime(data3_tech['Date'],infer_datetime_format=True), inplace=True)
 ```
 #### Reading shares owned by ceo as % of shares outstanding for financial stocks:
-```javascript
+```python
 temp_csv = Path("Resources/sharesceo_fin.csv")
 data4_fin=pd.read_csv(temp_csv)
 data4_fin.set_index(pd.to_datetime(data4_fin['Date'], infer_datetime_format=True), inplace=True)
@@ -203,37 +203,37 @@ data4_fin.drop(columns=['Date'], inplace=True)
 ```
 #### Using Missingo to inspect the data and see how much missing data do we have:
 We are only able to pull 4 years worth of data thus we need to analyze this data by year.
-```javascript
+```python
 msno.matrix(data4_fin)
 ```
 ![Missingo FIn4](Resources/PNG/Missingo(Data4_Fin).png)
 
 #### Removing rows with all NaN values: 
-```javascript
+```python
 data4_fin = data4_fin.dropna(how='all')
 ```
 #### Reading shares owned by ceo as % of shares outstanding for technology stocks:
-```javascript
+```python
 temp_csv = Path("Resources/sharesceo_tech.csv")
 data4_tech=pd.read_csv(temp_csv)
 data4_tech.set_index(pd.to_datetime(data4_tech['Date'], infer_datetime_format=True),inplace=True)
 data4_tech.drop(columns=['Date'], inplace=True)
 ```
 #### Using Missingo to inspect the data and see how much missing data do we have:
-```javascript
+```python
 msno.matrix(data4_tech)
 ```
 ![Missingo Tech4](Resources/PNG/Massiogo(Data4_Tech).png)
 
 
 #### Removing rows with all NaN values:
-```javascript
+```python
 data4_tech = data4_tech.dropna(how='all')
 ```
 
 #### Using new package to inspect the data and see how much missing data do we have:
 XLRE missing the majority of the data -- this classification for real state is a new convention
-```javascript
+```python
 msno.matrix(ret_sector) 
 ```
 ![Missingo RetSector](Resources/PNG/MissingoRetSector.png) </details>
